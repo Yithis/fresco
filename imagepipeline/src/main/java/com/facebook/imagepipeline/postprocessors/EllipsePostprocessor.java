@@ -28,7 +28,7 @@ public class EllipsePostprocessor extends BasePostprocessor {
     }
 
     public void process(Bitmap bitmap, int h, int w) {
-        InPlaceEllipseRoundFilter.roundEllipseBitmapInPlace(bitmap, h, w);
+        InPlaceEllipseRoundFilter.roundCornersEllipseBitmapInPlace(bitmap, h, w, h, w, h, w, h, w);
     }
 
     @Nullable
