@@ -23,7 +23,12 @@ public class EllipsePostprocessor extends BasePostprocessor {
 
     @Override
     public void process(Bitmap bitmap) {
-        InPlaceEllipseRoundFilter.roundEllipseBitmapInPlace(bitmap);
+        process(bitmap, 400, 800);
+        //InPlaceEllipseRoundFilter.roundEllipseBitmapInPlace(bitmap);
+    }
+
+    public void process(Bitmap bitmap, int h, int w) {
+        InPlaceEllipseRoundFilter.roundEllipseBitmapInPlace(bitmap, h, w);
     }
 
     @Nullable
