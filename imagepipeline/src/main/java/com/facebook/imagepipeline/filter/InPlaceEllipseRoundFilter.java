@@ -46,6 +46,8 @@ public final class InPlaceEllipseRoundFilter {
      * An implementation for rounding a given bitmap to an ellipse shape with given width and height.
      *
      * @param bitmap The input {@link Bitmap}
+     * @param h Height of ellipse
+     * @param w Width of ellipse
      */
     public static void roundEllipseBitmapInPlace(Bitmap bitmap, int h, int w) {
         Preconditions.checkNotNull(bitmap);
