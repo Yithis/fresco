@@ -18,25 +18,45 @@ import javax.annotation.Nullable;
 public class EllipsePostprocessor extends BasePostprocessor {
 
     private @Nullable CacheKey mCacheKey;
+    private int imageHeight = -1;
+    private int imageWidth = -1;
+    private @Nullable int[] cornersHeight;
+    private @Nullable int[] cornersWidth;
 
     public EllipsePostprocessor() {;}
 
+    public EllipsePostprocessor(int h, int w) {
+        imageHeight = h;
+        imageWidth = w;
+    }
+
+    public EllipsePostprocessor(int[] heights, int[] widths) {
+        cornersHeight = heights;
+        cornersWidth = widths;
+    }
+
     @Override
     public void process(Bitmap bitmap) {
-        process(bitmap, 400, 800);
-        //InPlaceEllipseRoundFilter.roundEllipseBitmapInPlace(bitmap);
+        if (imageHeight == -1 && imageWidth == -1 && cornersWidth == null && cornersHeight == null) {
+            InPlaceEllipseRoundFilter.roundEllipseBitmapInPlace(bitmap);
+        }
+        else if (imageHeight >= 0 && imageWidth >= 0) {
+            InPlaceEllipseRoundFilter.roundEllipseBitmapInPlace(bitmap, imageHeight, imageWidth);
+        }
+        else if (cornersWidth != null && cornersHeight != null) {
+            InPlaceEllipseRoundFilter.roundCornersEllipseBitmapInPlace(bitmap,
+                    cornersHeight[0], cornersWidth[0], cornersHeight[1], cornersWidth[1],
+                    cornersHeight[2], cornersWidth[2], cornersHeight[3], cornersWidth[3]);
+        }
     }
 
     public void process(Bitmap bitmap, int h, int w) {
-        InPlaceEllipseRoundFilter.roundCornersEllipseBitmapInPlace(bitmap, h, w, h, w, h, w, h, w);
+        InPlaceEllipseRoundFilter.roundEllipseBitmapInPlace(bitmap, h, w);
     }
 
     @Nullable
     @Override
     public CacheKey getPostprocessorCacheKey() {
-        if (mCacheKey == null) {
-            mCacheKey = new SimpleCacheKey("InPlaceEllipseRoundFilter");
-        }
-        return mCacheKey;
+        return null;
     }
 }

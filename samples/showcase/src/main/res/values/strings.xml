@@ -77,6 +77,12 @@
   <string name="imagepipeline_postprocessor_set_ellipse">Ellipse Post-Processor</string>
   <string name="imagepipeline_postprocessor_refresh">Refresh</string>
 
+  <string name="imagepipeline_ellipse_rounding_title">Ellipse rounding</string>
+  <string name="imagepipeline_ellipse_rounding_set_default">Default ellipse</string>
+  <string name="imagepipeline_ellipse_rounding_set_custom">Custom ellipse</string>
+  <string name="imagepipeline_ellipse_rounding_set_corners">Custom corners</string>
+
+
   <string name="imagepipeline_prefetch_title">Prefetch</string>
   <string name="imagepipeline_prefetch_help">1. Clear the cache\n2. Toggle images, they show slowly\n3. Hide the images\n4. Clear the cache\n5. Prefetch\n6. Show the images, they load fast!</string>
 

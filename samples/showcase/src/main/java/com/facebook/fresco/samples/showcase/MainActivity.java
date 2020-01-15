@@ -43,6 +43,7 @@ import com.facebook.fresco.samples.showcase.imageformat.pjpeg.ImageFormatProgres
 import com.facebook.fresco.samples.showcase.imageformat.svg.ImageFormatSvgFragment;
 import com.facebook.fresco.samples.showcase.imageformat.webp.ImageFormatWebpFragment;
 import com.facebook.fresco.samples.showcase.imagepipeline.ImagePipelineBitmapFactoryFragment;
+import com.facebook.fresco.samples.showcase.imagepipeline.ImagePipelineEllipseRoundingFragment;
 import com.facebook.fresco.samples.showcase.imagepipeline.ImagePipelineNotificationFragment;
 import com.facebook.fresco.samples.showcase.imagepipeline.ImagePipelinePostProcessorFragment;
 import com.facebook.fresco.samples.showcase.imagepipeline.ImagePipelinePrefetchFragment;
@@ -197,6 +198,9 @@ public class MainActivity extends AppCompatActivity
         break;
       case R.id.nav_imagepipeline_postprocessor:
         fragment = new ImagePipelinePostProcessorFragment();
+        break;
+      case R.id.nav_imagepipeline_ellipse_rounding:
+        fragment = new ImagePipelineEllipseRoundingFragment();
         break;
       case R.id.nav_imagepipeline_prefetch:
         fragment = new ImagePipelinePrefetchFragment();
